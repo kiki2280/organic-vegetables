@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,15 +47,17 @@
     </header>
 
     <section class="section__Organic " >
-        <div class="Organic__container ">
-            <div class="Organic_column container">
-                <h1 class="Organic_tilte ">ORGANIC VEGETABLES TO YOUR DIET TODAY!</h1>
-                <p class="Organic_suptilte  ">
-                    Our expertly curated vegetable baskets are made with the freshest, highest quality vegetables available. Fresh Harvest
-                    Box has got you covered. Fresh, high-quality vegetables in expertly curated vegetable baskets delivered to you.
-                </p>
+        <div class="containerall">
+            <div class="Organic__container ">
+                <div class="Organic_column container">
+                    <h1 class="Organic_tilte ">ORGANIC VEGETABLES TO YOUR DIET TODAY!</h1>
+                    <p class="Organic_suptilte  ">
+                        Our expertly curated vegetable baskets are made with the freshest, highest quality vegetables available. Fresh Harvest
+                        Box has got you covered. Fresh, high-quality vegetables in expertly curated vegetable baskets delivered to you.
+                    </p>
+                    </div>
+                    <div class="Organic_column2"></div>
                 </div>
-                <div class="Organic_column2"></div>
             </div>
     </section>
         
@@ -64,9 +65,13 @@
     <section class="section_HowItWorks" id="HowItWorks" >
         <div class="HowItWorks_container ">
             <div class="HowItWorks_Column container">
-                <img class="HowItWorks_img" src="./img/pic_desktop/img2.jpg" alt="img2"/>
+                <picture>
+                    <source srcset="./img/pic_mobile/img2.jpg" media="(max-width: 450px)">
+                    <source srcset="./img/pic tablet/img2.jpg" media="(max-width: 800px)">
+                    <img class="HowItWorks_img" src="./img/pic_desktop/img2.jpg" alt="img2"/>
+                </picture>
             </div>
-            <div class="HowItWorks_Column2 container ">
+            <div class="HowItWorks_Column2  ">
                 <h3 >
                     To order your<span class="color_pink"> vegetable</span> basket, simply follow these <span class="color_pink">easy steps</span>
                 </h3>
@@ -122,7 +127,12 @@
                         <p>60 USD / kg</p>
                     </li>
                     <li>
-                        <img src="./img/pic_desktop/pic1.png" alt="pic1">
+                        <picture>
+                            <source srcset="./img/pic_mobile/pic1.png" media="(max-width: 450px)">
+                            <source srcset="./img/pic_tablet/pic1.png" media="(max-width: 1000px)">
+                            <img src="./img/pic_desktop/pic1.png" alt="pic1">
+                        </picture>
+                        
                     </li>
                 </ul>
                 <ul class="Vegetables_card">

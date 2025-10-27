@@ -69,6 +69,7 @@ p {
     color: #141414;
 }
 
+
 /*------ Header---- */
 
 .header {
@@ -175,10 +176,15 @@ box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 /* ----section__Organic---- */
 
 
-.section__Organic {
+.containerall {
+    max-width: 1280px;
+
+}
+
+/* .section__Organic {
     max-width: 1280px;
     margin: 0 auto;
-}
+} */
 
 .Organic__container {
     display: flex;
