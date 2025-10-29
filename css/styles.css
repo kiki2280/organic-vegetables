@@ -1,4 +1,4 @@
-html {
+console.loghtml {
     scroll-behavior: smooth;
 }
 
@@ -239,7 +239,7 @@ p {
 
 /* ----section__Organic---- */
 
-.hero-section {
+.hero_section {
     padding: 100px 0 412px;
     width: 100%;
     background-color: #576f35;
@@ -266,7 +266,7 @@ p {
 }
 
 @media only screen and (min-width: 768px) {
-    .hero-section {
+    .hero_section {
         background-image: url(../img/pic_tablet/img1.jpg);
         background-size: 768px, 536px;
         background-position: bottom;
@@ -284,7 +284,7 @@ p {
 }
 
 @media only screen and (min-width: 1280px) {
-    .hero-section {
+    .hero_section {
         background-image: url(../img/pic_desktop/img1.jpg);
         padding: 232px 0 52px;
         background-position: left calc(50% + 320px) bottom 0;
@@ -302,6 +302,26 @@ p {
     }
 }
 
+
+.hero,
+.text-hero {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero_section.show .hero {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.hero_section.show .text-hero {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+}
+
 /* -----section_HowItWorks---- */
 
 
@@ -309,14 +329,44 @@ p {
     background: linear-gradient(to right, #7A3145 50%, #576F35 50%);
     background-size: 100% 100%;
     background-position: center center;
-
 }
+
+
+/* Исходное состояние: обе половины разъехались и невидимы */
+.section_HowItWorks {
+    overflow: hidden;
+    position: relative;
+}
+
+.HowItWorks_Column,
+.HowItWorks_Column2 {
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+/* Левая колонка выезжает справа налево */
+.HowItWorks_Column {
+    transform: translateX(-100px);
+}
+
+/* Правая колонка выезжает слева направо */
+.HowItWorks_Column2 {
+    transform: translateX(100px);
+}
+
+/* Когда секция появляется на экране */
+.section_HowItWorks.show .HowItWorks_Column,
+.section_HowItWorks.show .HowItWorks_Column2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
 
 .HowItWorks_container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 200px;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -335,6 +385,8 @@ p {
 .HowItWorks_img {
     border-radius: 33px;
 }
+
+
 
 .HowItWorks_Column2 {
 
@@ -427,6 +479,29 @@ p {
 }
 
 
+/* Исходное состояние: заголовки чуть ниже и невидимы */
+.Taste_tilte,
+.Taste_tilte2 {
+    opacity: 0;
+    transform: translateY(50px);
+    /* смещаем вниз */
+    transition: all 1s ease;
+}
+
+/* Когда секция появляется */
+.section_Taste.show .Taste_tilte,
+.section_Taste.show .Taste_tilte2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Можно добавить лёгкую задержку для второго заголовка, если нужно */
+.section_Taste.show .Taste_tilte2 {
+    transition-delay: 0.2s;
+    /* необязательно */
+}
+
+
 /* ----section_Vagetables---- */
 
 
@@ -476,6 +551,10 @@ p {
     border-radius: 40px;
 }
 
+.Vegetables_img:hover {
+    transform: scale(1.1);
+}
+
 .Vegetables_card h3 {
     text-transform: uppercase;
     color: #7A3145;
@@ -486,6 +565,65 @@ p {
     color: #141414;
 }
 
+/* Исходное состояние: текст ниже и прозрачный */
+.Vegetables_tilte,
+.Vegetables_suptilte {
+    opacity: 0;
+    transform: translateY(50px);
+    /* смещаем вниз */
+    transition: all 1s ease;
+}
+
+/* Когда секция появляется */
+.section_Vagetables.show .Vegetables_tilte,
+.section_Vagetables.show .Vegetables_suptilte {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Для небольшого эффекта последовательного появления можно добавить задержку для описания */
+.section_Vagetables.show .Vegetables_suptilte {
+    transition-delay: 0.1s;
+}
+
+
+/* Исходное состояние: карточки ниже и прозрачны */
+.Vegetables_card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.5s ease;
+}
+
+/* Когда секция появляется */
+.section_Vagetables.show .Vegetables_card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Для эффекта stagger добавим задержку по индексу через CSS переменные */
+.Vegetables_card:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.Vegetables_card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.Vegetables_card:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.Vegetables_card:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.Vegetables_card:nth-child(5) {
+    transition-delay: 0.8s;
+}
+
+.Vegetables_card:nth-child(6) {
+    transition-delay: 1s;
+}
 
 
 /* -----section_Previews---- */
@@ -718,6 +856,37 @@ p {
     }
 }
 
+
+/* Исходное состояние: текст ниже и прозрачный */
+.title-reviews,
+.reviews-paragraf,
+.reviews-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+/* Когда секция появляется */
+.section-reviews.show .title-reviews,
+.section-reviews.show .reviews-paragraf,
+.section-reviews.show .reviews-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Для эффекта stagger (чуть задерживаем каждый отзыв) */
+.reviews-item:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.reviews-item:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.reviews-item:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
 /* -----section_Order------ */
 
 .section_Order {
@@ -847,9 +1016,6 @@ p {
 }
 
 
-
-
-
 .Order_list2 {
     display: flex;
     flex-direction: column;
@@ -884,6 +1050,56 @@ border-radius: 16px;
         margin-left: 16px;
 }
 
+/* Исходное состояние текста */
+.Order_tilte,
+.Order_suptilte {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+/* Исходное состояние колонок */
+.Order_list1 {
+    opacity: 0;
+    transform: translateX(-100px);
+    /* слева */
+    transition: all 1.5s ease;
+}
+
+.Order_list2 {
+    opacity: 0;
+    transform: translateX(100px);
+    /* справа */
+    transition: all 1.5s ease;
+}
+
+/* Когда секция активна */
+.section_Order.show .Order_tilte,
+.section_Order.show .Order_suptilte {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section_Order.show .Order_list1,
+.section_Order.show .Order_list2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Добавим небольшую задержку для текста и колонок */
+
+.Order_suptilte {
+    transition-delay: 0.2s;
+}
+
+.Order_list1 {
+    transition-delay: 0.3s;
+}
+
+.Order_list2 {
+    transition-delay: 0.3s;
+} 
+
 /* ----footer---- */
 
 .footer {
@@ -900,13 +1116,6 @@ border-radius: 16px;
     justify-content: space-between;
 }
 
-.logoText {
-
-}
-
-.logo1 {
-
-}
 
 .logo_suptaitle {
     margin-top: 24px;
