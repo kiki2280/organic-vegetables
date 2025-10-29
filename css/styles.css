@@ -977,7 +977,7 @@ border-radius: 16px;
         transition: opacity 0.4s ease, visibility 0.4s ease;
         z-index: 1000;
         overflow: hidden;
-        /* фон фиксированный, скролл будет у контейнера */
+        
 }
 
 .mobile_menu.active {
@@ -995,12 +995,9 @@ background-color: #576F35;
     transform: translateX(100%);
     transition: transform 0.4s ease;
 
-        overflow-y: auto;
-            /* Включаем вертикальную прокрутку */
-            -webkit-overflow-scrolling: touch;
-            /* плавный скролл на iOS */
-            padding-bottom: 40px;
-            /* чтобы последний элемент не прилипал к низу */
+    padding-top: 32px;
+    padding-bottom: 40px;
+
 }
 
 .mobile_menu.active .mobile_menu_container {
@@ -1014,7 +1011,7 @@ background-color: #576F35;
 .mobile_menu_close_icon {
     display: flex;
     margin-left: 253px;
-    padding-top: 25px;
+
 
 }
 
@@ -1025,8 +1022,10 @@ background-color: #576F35;
 .mob_list {
     display: flex;
     flex-direction: column;
-    gap: 380px;
-    padding-top: 274px;
+    height: 100%;
+    justify-content: space-between;
+    padding-top: 288px;
+    gap: 20px;
 
 }
 
@@ -1075,7 +1074,6 @@ background-color: #576F35;
 
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
 
-    margin-bottom: 48px;
 }
 
 
