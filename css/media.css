@@ -31,13 +31,18 @@
     }
 
     .mob_list {
-        padding-top: 224px;
+        padding-top: 224px;  
+    }
+
+    .mob_menu_btn_shop {
+    margin-bottom: 20px;
     }
 
 
     .section_HowItWorks {
         background: linear-gradient(to bottom, #7A3145 556px, #576F35 0);
     }
+
 
     .HowItWorks_container {
         flex-direction: column;
