@@ -719,6 +719,22 @@ p {
     transform: translateY(0);
 }
 
+/* Мобильные */
+@media (max-width: 767px) {
+    .reviews-item {
+        width: 335px;
+    }
+}
+
+/* Планшет */
+@media (min-width: 768px) and (max-width: 1279px) {
+    .reviews-item {
+        width: 340px;
+    }
+}
+
+
+
 /* -----section_Order------ */
 
 .section_Order {
