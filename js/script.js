@@ -20,8 +20,6 @@ const observerReviews = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show'); // по желанию скрывать
     }
   });
 }, { threshold: 0.2 });
@@ -49,8 +47,6 @@ const section_HowItWorks = document.querySelectorAll('.section_HowItWorks');
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
-      } else {
-        entry.target.classList.remove('show');
       }
     });
   }, { threshold: 0.2 });
@@ -67,8 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
-      } else {
-        entry.target.classList.remove('show'); // если нужно скрывать при уходе
       }
     });
   }, { threshold: 0.2 });
@@ -93,8 +87,6 @@ const observer_Vagetables = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show'); // если нужно скрывать при уходе
     }
   });
 }, { threshold: thresholdValue });
@@ -102,3 +94,16 @@ const observer_Vagetables = new IntersectionObserver(entries => {
 section_Vagetables.forEach(section => observer_Vagetables.observe(section));
 
   // анимация на сайте  section_Order
+
+  const sectionOrder = document.querySelector('.section_Order');
+
+const observerOrder = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observerOrder.unobserve(entry.target); // отключаем наблюдение, чтобы анимация сработала один раз
+    }
+  });
+}, { threshold: 0.2 });
+
+if(sectionOrder) observerOrder.observe(sectionOrder);
