@@ -596,7 +596,6 @@ p {
 
 /* ----- Section Reviews ----- */
 
-
 .section-reviews {
     padding: 80px 0;
 }
@@ -628,13 +627,14 @@ p {
 .reviews-list {
     display: flex;
     gap: 8px;
-    overflow: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .reviews-item {
     flex: 0 0 auto;
     width: 344px;
-    /* ПК ширина */
+    /* ПК ширина по умолчанию */
     padding: 20px 16px;
     border-radius: 24px;
     border: 1px solid rgba(212, 191, 196, 1);
@@ -642,26 +642,6 @@ p {
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: slide-right-left 13s linear infinite alternate;
-    /* Плавно туда-сюда */
-}
-
-/* Остановка анимации при наведении */
-.reviews-item:hover,
-.reviews-item:focus {
-    animation-play-state: paused;
-}
-
-/* Анимация движения вправо и влево */
-@keyframes slide-right-left {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(100% - 344px));
-        /* движется вправо */
-    }
 }
 
 /* Изображение */
@@ -719,6 +699,8 @@ p {
     transform: translateY(0);
 }
 
+/* ================= Медиазапросы ================= */
+
 /* Мобильные */
 @media (max-width: 767px) {
     .reviews-item {
@@ -733,7 +715,12 @@ p {
     }
 }
 
-
+/* ПК */
+@media (min-width: 1280px) {
+    .reviews-item {
+        width: 344px;
+    }
+}
 
 /* -----section_Order------ */
 

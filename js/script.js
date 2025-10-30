@@ -71,6 +71,7 @@ section_Vagetables.forEach(section => observer_Vagetables.observe(section));
 
   // анимация на сайте  section-reviews
 
+// Появление секции при скролле
 const reviewsSection = document.querySelector('.section-reviews');
 
 const observerReviews = new IntersectionObserver(entries => {
@@ -83,27 +84,29 @@ const observerReviews = new IntersectionObserver(entries => {
 
 if(reviewsSection) observerReviews.observe(reviewsSection);
 
-// Плавное движение слайдера туда-сюда
+
+// ======= Плавный слайдер для всех устройств =======
 const slider = document.querySelector('.reviews-list');
 let direction = 1; // 1 = вправо, -1 = влево
 let speed = 0.5; // пикселей за кадр
-let animationId;
+let animId;
 
 function animateSlider() {
     slider.scrollLeft += speed * direction;
-    
-    if(slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) direction = -1;
-    if(slider.scrollLeft <= 0) direction = 1;
 
-    animationId = requestAnimationFrame(animateSlider);
+    // Меняем направление при достижении конца
+    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) direction = -1;
+    if (slider.scrollLeft <= 0) direction = 1;
+
+    animId = requestAnimationFrame(animateSlider);
 }
 
+// Запуск анимации
 animateSlider();
 
-slider.addEventListener('mouseenter', () => cancelAnimationFrame(animationId));
+// Остановка при наведении на слайдер
+slider.addEventListener('mouseenter', () => cancelAnimationFrame(animId));
 slider.addEventListener('mouseleave', animateSlider);
-
-
 
 
   // анимация на сайте  section_Order
