@@ -71,42 +71,62 @@ section_Vagetables.forEach(section => observer_Vagetables.observe(section));
 
   // анимация на сайте  section-reviews
 
-// Появление секции при скролле
-const reviewsSection = document.querySelector('.section-reviews');
+// ====== Анимации секций ======
 
-const observerReviews = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.2 });
+// Универсальная функция для IntersectionObserver
+function animateSection(selector, threshold = 0.2, once = false) {
+    const elements = document.querySelectorAll(selector);
+    if (elements.length === 0) return;
 
-if(reviewsSection) observerReviews.observe(reviewsSection);
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                if (once) observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold });
 
-
-// ======= Плавный слайдер для всех устройств =======
-const slider = document.querySelector('.reviews-list');
-let direction = 1; // 1 = вправо, -1 = влево
-let speed = 0.5; // пикселей за кадр
-let animId;
-
-function animateSlider() {
-    slider.scrollLeft += speed * direction;
-
-    // Меняем направление при достижении конца
-    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) direction = -1;
-    if (slider.scrollLeft <= 0) direction = 1;
-
-    animId = requestAnimationFrame(animateSlider);
+    elements.forEach(el => observer.observe(el));
 }
 
-// Запуск анимации
-animateSlider();
+// Анимация секций
+animateSection('.hero_section', 0.3);
+animateSection('.section_HowItWorks', 0.2);
+animateSection('.section_Taste', 0.2);
+animateSection('.section_Vagetables', window.innerWidth < 800 ? 0.2 : 0.3);
+animateSection('.section-reviews', 0.2);
+animateSection('.section_Order', 0.2, true);
 
-// Остановка при наведении на слайдер
-slider.addEventListener('mouseenter', () => cancelAnimationFrame(animId));
-slider.addEventListener('mouseleave', animateSlider);
+
+// ====== Плавный слайдер для Reviews ======
+const slider = document.querySelector('.reviews-list');
+
+if (slider) {
+    let animId;
+    let direction = 1;
+    const speed = 0.5;
+
+    // Функция анимации слайдера
+    function animateSlider() {
+        slider.scrollLeft += speed * direction;
+        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) direction = -1;
+        if (slider.scrollLeft <= 0) direction = 1;
+        animId = requestAnimationFrame(animateSlider);
+    }
+
+    // Запуск только на планшете и ПК
+    if (window.innerWidth >= 768) {
+        animateSlider();
+
+        // Остановка при наведении
+        slider.addEventListener('mouseenter', () => cancelAnimationFrame(animId));
+        slider.addEventListener('mouseleave', animateSlider);
+    } else {
+        // На мобильных включаем нативный скролл (свайп)
+        slider.style.overflowX = 'auto';
+    }
+}
 
 
   // анимация на сайте  section_Order
