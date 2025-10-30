@@ -1100,6 +1100,23 @@ border-radius: 16px;
     transition-delay: 0.4s;
 }
 
+/* Адаптация для мобильных экранов */
+@media (max-width: 767px) {
+    .Order_list1 {
+        transform: translateX(-10%);
+        /* меньшее смещение */
+    }
+
+    .Order_list2 {
+        transform: translateX(10%);
+    }
+
+    .Order_tilte,
+    .Order_suptilte {
+        transform: translateY(2rem);
+    }
+}
+
 
 /* ----footer---- */
 
