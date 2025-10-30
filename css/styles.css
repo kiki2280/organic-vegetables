@@ -115,7 +115,6 @@ p {
     color: #7A3145;
 }
 
-
 .color_black {
     color: #141414;
     font-weight: 700;
@@ -132,8 +131,6 @@ p {
     width: 100%;
     z-index: 1000;
 }
-
-
 
 .header_container {
     display: flex;
@@ -163,22 +160,6 @@ p {
 .logo1 {
     display: flex;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.menu {
-
-}
-
-.logo1_mob {
-    display: none;
-}
-
-.nav_icon_menu {
-    display: none;
-}
-
-.nav_icon_menu_mob {
-    display: none;
 }
 
 .logo1 use {
@@ -235,6 +216,54 @@ p {
     color: #7A3145;
     background-color: #FBFBFB;
     box-shadow: 0 0 8px rgba(198, 65, 100, 0.4);
+}
+
+/*  */
+
+
+.mobile_header {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px auto;
+    
+    padding: 11px 11px;
+
+    
+        border-radius: 50px;
+        background: rgba(200, 200, 200, 0.2);
+        backdrop-filter: blur(12px);
+        box-shadow:
+            0 4px 15px rgba(0, 0, 0, 0.1),
+            0 8px 30px rgba(0, 0, 0, 0.15);
+        transition: all 0.5s ease;
+}
+
+.mobile_header:hover {
+    background: rgba(200, 200, 200, 0.3);
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.12),
+        0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+.mobile_logo {
+
+}
+
+.logo1_mob {
+    display:none;
+}
+
+.menu {
+
+}
+
+
+
+.nav_icon_menu {}
+
+.nav_icon_menu_mob {
+    display: none;
 }
 
 /* ----section__Organic---- */

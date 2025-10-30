@@ -1,26 +1,33 @@
 /* для телефона */
 @media only screen and (max-width: 767px) {
 
-    .logo1 {
-            display: none;
-        }
+    /* HEADER */
 
+    .header_container {
+        display: none;
+    }
+
+
+    .mobile_header {
+        display: flex;
+    }
+    
     .logo1_mob {
         display: flex;
     }
 
     .nav_icon_menu_mob {
         display: flex;
-        margin-left: 43px;
     }
 
-    .nav_list li {
-            display: none;
-        }
-    
-    .btn {
+    .logo1 {
         display: none;
     }
+
+    .nav_icon_menu {
+        display: none;
+    }
+
 
     /* menu */
 
@@ -148,17 +155,14 @@
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
 
 
-    .nav_icon_menu {
-        display: flex;
-        margin-left: 400px;
-        }
+    /* HEADER */
 
-    .nav_list li {
+    .header_container {
         display: none;
     }
 
-    .btn {
-        display: none;
+    .mobile_header {
+        display: flex;
     }
 
 
