@@ -642,8 +642,6 @@ p {
     }
 }
 
-@media screen and (min-width: 1280px) {}
-
 .title-reviews {
     font-size: 46px;
     font-weight: 600;
