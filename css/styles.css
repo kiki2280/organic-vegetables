@@ -346,12 +346,12 @@ p {
 
 /* Левая колонка выезжает справа налево */
 .HowItWorks_Column {
-    transform: translateX(-100px);
+    transform: translateX(-30%);
 }
 
 /* Правая колонка выезжает слева направо */
 .HowItWorks_Column2 {
-    transform: translateX(100px);
+    transform: translateX(30%);
 }
 
 /* Когда секция появляется на экране */
@@ -1053,22 +1053,23 @@ border-radius: 16px;
 .Order_tilte,
 .Order_suptilte {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(3rem);
+    /* вместо 50px используем относительную единицу */
     transition: all 1s ease;
 }
 
 /* Исходное состояние колонок */
 .Order_list1 {
     opacity: 0;
-    transform: translateX(-100px);
-    /* слева */
+    transform: translateX(-30%);
+    /* меньшее смещение на мобильных */
     transition: all 1.5s ease;
 }
 
 .Order_list2 {
     opacity: 0;
-    transform: translateX(100px);
-    /* справа */
+    transform: translateX(30%);
+    /* меньшее смещение на мобильных */
     transition: all 1.5s ease;
 }
 
@@ -1085,7 +1086,7 @@ border-radius: 16px;
     transform: translateX(0);
 }
 
-/* Добавим небольшую задержку для плавного появления */
+/* Плавные задержки */
 .Order_tilte {
     transition-delay: 0.2s;
 }
@@ -1094,12 +1095,9 @@ border-radius: 16px;
     transition-delay: 0.4s;
 }
 
-.Order_list1 {
-    transition-delay: 0.6s;
-}
-
+.Order_list1,
 .Order_list2 {
-    transition-delay: 0.6s;
+    transition-delay: 0.4s;
 }
 
 
