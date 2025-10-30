@@ -1100,20 +1100,25 @@ border-radius: 16px;
     transition-delay: 0.4s;
 }
 
-/* Адаптация для мобильных экранов */
+/* --- Мобильная версия: все элементы выезжают вертикально --- */
 @media (max-width: 767px) {
-    .Order_list1 {
-        transform: translateX(-10%);
-        /* меньшее смещение */
-    }
 
+    .Order_list1,
     .Order_list2 {
-        transform: translateX(10%);
+        transform: translateY(2rem);
+        /* смещение снизу */
     }
 
-    .Order_tilte,
-    .Order_suptilte {
-        transform: translateY(2rem);
+    .section_Order.show .Order_list1,
+    .section_Order.show .Order_list2 {
+        transform: translateY(0);
+    }
+
+    /* Можно уменьшить задержки, чтобы всё появлялось быстрее */
+    .Order_list1,
+    .Order_list2 {
+        transition: all 1.5s ease;
+        transition-delay: 0.5s;
     }
 }
 
