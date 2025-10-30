@@ -12,31 +12,6 @@ const observer = new IntersectionObserver(entries => {
 
 if(hero_section) observer.observe(hero_section);
 
-// анимация на сайте  section-reviews
-
-const reviewsSection = document.querySelector('.section-reviews');
-
-const observerReviews = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.2 });
-
-if (reviewsSection) observerReviews.observe(reviewsSection);
-
-
-const slider = document.querySelector('.slider');
-
-slider.addEventListener('mousemove', () => {
-  slider.classList.add('paused');
-});
-
-slider.addEventListener('mouseleave', () => {
-  slider.classList.remove('paused');
-});
-
 
 // анимация на сайте  section_HowItWorks
 
@@ -92,6 +67,44 @@ const observer_Vagetables = new IntersectionObserver(entries => {
 }, { threshold: thresholdValue });
 
 section_Vagetables.forEach(section => observer_Vagetables.observe(section));
+
+
+  // анимация на сайте  section-reviews
+
+const reviewsSection = document.querySelector('.section-reviews');
+
+const observerReviews = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+if(reviewsSection) observerReviews.observe(reviewsSection);
+
+// Плавное движение слайдера туда-сюда
+const slider = document.querySelector('.reviews-list');
+let direction = 1; // 1 = вправо, -1 = влево
+let speed = 0.5; // пикселей за кадр
+let animationId;
+
+function animateSlider() {
+    slider.scrollLeft += speed * direction;
+    
+    if(slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) direction = -1;
+    if(slider.scrollLeft <= 0) direction = 1;
+
+    animationId = requestAnimationFrame(animateSlider);
+}
+
+animateSlider();
+
+slider.addEventListener('mouseenter', () => cancelAnimationFrame(animationId));
+slider.addEventListener('mouseleave', animateSlider);
+
+
+
 
   // анимация на сайте  section_Order
 

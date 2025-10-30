@@ -1,17 +1,15 @@
-/* для телефона */
+
+/* ======================= header ======================= */
+/* ДЛЯ ТЕЛЕФОНА */
 @media only screen and (max-width: 767px) {
-
-    /* HEADER */
-
     .header_container {
         display: none;
     }
 
-
     .mobile_header {
         display: flex;
     }
-    
+
     .logo1_mob {
         display: flex;
     }
@@ -27,10 +25,24 @@
     .nav_icon_menu {
         display: none;
     }
+}
+
+/* ДЛЯ ПЛАНШЕТА */
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .header_container {
+        display: none;
+    }
+
+    .mobile_header {
+        display: flex;
+    }
+}
 
 
-    /* menu */
 
+/* ======================= mobile_menu ======================= */
+/* ДЛЯ ТЕЛЕФОНА */
+@media only screen and (max-width: 767px) {
     .mobile_menu_container {
         width: 100%;
         padding-top: 20px;
@@ -38,16 +50,64 @@
     }
 
     .mob_list {
-        padding-top: 224px;  
+        padding-top: 224px;
     }
 
     .mob_menu_btn_shop {
-    margin-bottom: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* ======================= hero_section ======================= */
+
+
+/* ДЛЯ ПЛАНШЕТА */
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .hero_section {
+        background-image: url(../img/pic_tablet/img1.jpg);
+        background-size: 768px, 536px;
+        background-position: bottom;
+        padding-top: 120px;
+        padding-bottom: 588px;
     }
 
+    .hero {
+        max-width: 704px;
+    }
 
-    /* Section_HowItWorks */
+    .text-hero {
+        max-width: 603px;
+    }
+}
 
+/* ДЛЯ ПК */
+@media only screen and (min-width: 1280px) {
+    .hero_section {
+        background-image: url(../img/pic_desktop/img1.jpg);
+        padding: 232px 0 52px;
+        background-position: left calc(50% + 320px) bottom 0;
+        background-size: 640px, 796px;
+        margin: auto;
+    }
+
+    .hero {
+        max-width: 502px;
+        margin-bottom: 128px;
+    }
+
+    .text-hero {
+        max-width: 472px;
+    }
+}
+
+
+
+/* ======================= section_HowItWorks ======================= */
+/* ДЛЯ ТЕЛЕФОНА */
+@media only screen and (max-width: 767px) {
     .section_HowItWorks {
         background: linear-gradient(to bottom, #7A3145 556px, #576F35 0);
     }
@@ -79,149 +139,10 @@
         gap: 20px;
 
     }
-
-    /* Section_Taste */
-
-    .Taste_container {
-        padding: 80px 0;
-    }
-
-    /* Section_Vegetables */
-
-    .Vegetables_container {
-        padding: 80px 0px;
-    }
-
-    .Vegetables_tilte {
-        margin-bottom: 20px;
-    }
-
-    .Vegetables_suptilte {
-        margin-bottom: 40px;
-    }
-
-    /* Section_Previews */
-
-    .title-reviews {
-        font-size: 48px;
-    }
-
-    .reviews-item {
-        width: 335px;
-    }
-
-
-
-    /* Section_Order */
-
-    .Order_container {
-        padding: 80px 0;
-    }
-
-    .Order_tilte {
-        margin-bottom: 20px;
-    }
-
-    .Order_suptilte {
-        margin-bottom: 40px;
-    }
-
-    .Order_list1 {
-        max-width: 335px;
-        padding: 40px 20px;
-    }
-    
-    .Order_list1 h3 {
-        max-width: 295px;
-    }
-
-    .Order_btn,
-    .Order-input-name,
-    .Order-input-email,
-    .Order-input-comment {
-        width: 295px;
-    }
-
-    .Order-input-comment {
-        height: 92px;
-    }
-
-    .Order_list2 {
-        max-width: 335px;
-        padding: 40px 20px;
-    }
-
-    /* amimation */
-    .Order_list1,
-    .Order_list2 {
-        transform: translateY(2rem);
-        /* смещение снизу */
-    }
-
-    .section_Order.show .Order_list1,
-    .section_Order.show .Order_list2 {
-        transform: translateY(0);
-    }
-
-    /* Можно уменьшить задержки, чтобы всё появлялось быстрее */
-    .Order_list1,
-    .Order_list2 {
-        transition: all 1.5s ease;
-        transition-delay: 0.5s;
-    }
-
-    /* Footer */
-
-    .Links_Contacts {
-        flex-direction: column;
-        gap: 40px;
-        padding-top: 40px;
-    }
-
-    .privacypolicy {
-        margin-left: -20px;
-    }
-
-                
 }
 
-
-
-/* для планшета */
+/* ДЛЯ ПЛАНШЕТА */
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
-
-
-    /* HEADER */
-
-    .header_container {
-        display: none;
-    }
-
-    .mobile_header {
-        display: flex;
-    }
-
-
-    /* Hero_section */
-
-    .hero_section {
-        background-image: url(../img/pic_tablet/img1.jpg);
-        background-size: 768px, 536px;
-        background-position: bottom;
-        padding-top: 120px;
-        padding-bottom: 588px;
-    }
-
-    .hero {
-        max-width: 704px;
-    }
-
-    .text-hero {
-        max-width: 603px;
-    }
-
-    /* Section_HowItWorks */
-
     .section_HowItWorks {
         background: linear-gradient(to bottom, #7A3145 840px, #576F35 0);
     }
@@ -241,10 +162,54 @@
     .Vegetables_cardsList {
         gap: 28px 16px;
     }
+}
 
 
-    /* Section_Previews */
 
+
+/* ======================= section_Taste ======================= */
+/* ДЛЯ ТЕЛЕФОНА */
+@media only screen and (max-width: 767px) {
+    .Taste_container {
+        padding: 80px 0;
+    }
+}
+
+
+
+
+/* ======================= section_Vagetables ======================= */
+/* ДЛЯ ТЕЛЕФОНА */
+@media only screen and (max-width: 767px) {
+    .Vegetables_container {
+        padding: 80px 0px;
+    }
+
+    .Vegetables_tilte {
+        margin-bottom: 20px;
+    }
+
+    .Vegetables_suptilte {
+        margin-bottom: 40px;
+    }
+}
+
+
+
+/* ======================= section-reviews ======================= */
+/* ДЛЯ ТЕЛЕФОНА */
+@media only screen and (max-width: 767px) {
+    .title-reviews {
+        font-size: 48px;
+    }
+
+    .reviews-item {
+        width: 335px;
+    }
+}
+
+/* ДЛЯ ПЛАНШЕТА */
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
     .section-reviews {
         padding: 100px 0;
     }
@@ -270,62 +235,16 @@
         max-width: 340px;
         padding: 20px;
     }
-
-
-    /* Section_Order */
-
-    .Order_list1 {
-        max-width: 640px;
-        padding: 72px 100px;
-    }
-
-    .Order_list1 h3 {
-        max-width: 440px;
-    }
-
-    .Order_list2 {
-        max-width: 640px;
-    }
-
-
-    /* Footer */
-
-    .Links_Contacts {
-        flex-direction: column;
-        gap: 64px;
-    }
 }
 
-/* для пк */
+/* ДЛЯ ПК */
 @media only screen and (min-width: 1280px) {
-
-
-    /* Hero_section */
-
-    .hero_section {
-        background-image: url(../img/pic_desktop/img1.jpg);
-        padding: 232px 0 52px;
-        background-position: left calc(50% + 320px) bottom 0;
-        background-size: 640px, 796px;
-        margin: auto;
-    }
-
-    .hero {
-        max-width: 502px;
-        margin-bottom: 128px;
-    }
-
-    .text-hero {
-        max-width: 472px;
-    }
-
-    /* Section_Previews */
-
     .title-reviews {
-        max-width: 751px;
+        max-width: 553px;
     }
 
     .reviews-paragraf {
+        max-width: 553px;
         margin-bottom: 52px;
     }
 
@@ -338,6 +257,105 @@
         width: 344px;
         animation: none !important;
     }
+}
 
 
+
+/* ======================= section_Order ======================= */
+/* ДЛЯ ТЕЛЕФОНА */
+@media only screen and (max-width: 767px) {
+    .Order_container {
+        padding: 80px 0;
+    }
+
+    .Order_tilte {
+        margin-bottom: 20px;
+    }
+
+    .Order_suptilte {
+        margin-bottom: 40px;
+    }
+
+    .Order_list1 {
+        max-width: 335px;
+        padding: 40px 20px;
+    }
+
+    .Order_list1 h3 {
+        max-width: 295px;
+    }
+
+    .Order_btn,
+    .Order-input-name,
+    .Order-input-email,
+    .Order-input-comment {
+        width: 295px;
+    }
+
+    .Order-input-comment {
+        height: 92px;
+    }
+
+    .Order_list2 {
+        max-width: 335px;
+        padding: 40px 20px;
+    }
+
+    /* amimation */
+    .Order_list1,
+    .Order_list2 {
+        transform: translateY(2rem);
+    }
+
+    .section_Order.show .Order_list1,
+    .section_Order.show .Order_list2 {
+        transform: translateY(0);
+    }
+
+    .Order_list1,
+    .Order_list2 {
+        transition: all 1.5s ease;
+        transition-delay: 0.5s;
+    }
+}
+
+/* ДЛЯ ПЛАНШЕТА */
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .Order_list1 {
+        max-width: 640px;
+        padding: 72px 100px;
+    }
+
+    .Order_list1 h3 {
+        max-width: 440px;
+    }
+
+    .Order_list2 {
+        max-width: 640px;
+    }
+}
+
+
+
+
+/* ======================= footer ======================= */
+/* ДЛЯ ТЕЛЕФОНА */
+@media only screen and (max-width: 767px) {
+    .Links_Contacts {
+        flex-direction: column;
+        gap: 40px;
+        padding-top: 40px;
+    }
+
+    .privacypolicy {
+        margin-left: -20px;
+    }
+}
+
+/* ДЛЯ ПЛАНШЕТА */
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+    .Links_Contacts {
+        flex-direction: column;
+        gap: 64px;
+    }
 }

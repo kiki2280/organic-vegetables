@@ -104,6 +104,7 @@ p {
         line-height: 20px;
     }
 }
+
 .color_pink {
     color: #D4BFC4;
 }
@@ -111,6 +112,7 @@ p {
 .color_green {
     color: #576F35;
 }
+
 .color_purple {
     color: #7A3145;
 }
@@ -140,7 +142,7 @@ p {
 
     padding: 22px 22px;
     margin: 20px 0px;
-    
+
     border-radius: 50px;
     background: rgba(200, 200, 200, 0.2);
     backdrop-filter: blur(12px);
@@ -167,6 +169,7 @@ p {
     justify-content: center;
     align-items: center;
 }
+
 .nav_list {
     display: flex;
     flex-direction: row;
@@ -245,7 +248,7 @@ p {
 }
 
 .logo1_mob {
-    display:none;
+    display: none;
 }
 
 .nav_icon_menu_mob {
@@ -342,7 +345,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .HowItWorks_picture {
@@ -360,7 +363,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding:100px 0;
+    padding: 100px 0;
 }
 
 .HowItWorks_block {
@@ -382,7 +385,7 @@ p {
 }
 
 .HowItWorks_list {
-    
+
     max-width: 440px;
     display: flex;
     align-items: center;
@@ -416,9 +419,7 @@ p {
 
 /* ------section_Taste------- */
 
-.section_Taste {
-
-}
+.section_Taste {}
 
 .Taste_container {
     display: flex;
@@ -432,7 +433,7 @@ p {
     display: flex;
     align-items: center;
     min-height: 104px;
-    
+
     text-transform: uppercase;
 
     border-radius: 12px;
@@ -498,7 +499,7 @@ p {
 
 
 .Vegetables_cardsList {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
@@ -511,7 +512,7 @@ p {
     flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: center;
-    
+
     background-color: #FBFBFB;
     max-width: 344px;
     padding: 32px;
@@ -593,7 +594,8 @@ p {
 }
 
 
-/* -----section_Previews---- */
+/* ----- Section Reviews ----- */
+
 
 .section-reviews {
     padding: 80px 0;
@@ -604,10 +606,6 @@ p {
 }
 
 .title-reviews {
-    font-size: 46px;
-    font-weight: 600;
-    line-height: 52px;
-    letter-spacing: -0.015em;
     text-align: left;
     color: #141414;
     text-transform: uppercase;
@@ -619,7 +617,6 @@ p {
     color: #576f35;
 }
 
-
 .reviews-paragraf {
     text-align: left;
     color: #141414;
@@ -627,100 +624,61 @@ p {
     margin-bottom: 40px;
 }
 
-/* #region slider*/
-
-.reviews-list-wrapper {
-    overflow: hidden;
-}
-
+/* Slider */
 .reviews-list {
-    width: 100%;
-    overflow: hidden;
     display: flex;
     gap: 8px;
-    justify-content: start;
+    overflow: hidden;
 }
 
 .reviews-item {
-    width: 100%;
     flex: 0 0 auto;
+    width: 344px;
+    /* ПК ширина */
     padding: 20px 16px;
+    border-radius: 24px;
+    border: 1px solid rgba(212, 191, 196, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: visible;
-    border-radius: 24px;
-    border: 1px solid rgba(212, 191, 196, 1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: slide-left 30s linear infinite;
+    animation: slide-right-left 13s linear infinite alternate;
+    /* Плавно туда-сюда */
 }
 
-.slider.paused .reviews-item {
+/* Остановка анимации при наведении */
+.reviews-item:hover,
+.reviews-item:focus {
     animation-play-state: paused;
 }
 
-.reviews-item:hover .reviews-img,
-.reviews-item:focus .reviews-img,
-.reviews-item:active .reviews-img {
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-
-@keyframes slide-left {
-
-    0%,
-    10% {
+/* Анимация движения вправо и влево */
+@keyframes slide-right-left {
+    0% {
         transform: translateX(0);
     }
 
-    20%,
-    35% {
-        transform: translateX(calc(-100% - 8px));
-    }
-
-    45%,
-    60% {
-        transform: translateX(calc(-200% - 16px));
-    }
-
-    70%,
-    85% {
-        transform: translateX(calc(-100% - 8px));
-    }
-
-    95%,
     100% {
-        transform: translateX(0);
+        transform: translateX(calc(100% - 344px));
+        /* движется вправо */
     }
 }
 
-/* #endregion*/
-
-    @keyframes slide-left {
-
-        0%,
-        20% {
-            transform: translateX(0);
-        }
-
-        45%,
-        70% {
-            transform: translateX(-364px);
-        }
-
-        95%,
-        100% {
-            transform: translateX(0%);
-        }
-    }
-
+/* Изображение */
 .reviews-img {
     max-width: 56px;
     height: 56px;
     border-radius: 100%;
     margin-bottom: 24px;
+    transition: transform 0.3s ease;
 }
 
+.reviews-item:hover .reviews-img,
+.reviews-item:focus .reviews-img {
+    transform: scale(1.1);
+}
+
+/* Текст */
 .reviewer {
     font-size: 18px;
     font-weight: 600;
@@ -735,18 +693,17 @@ p {
     text-align: center;
     color: #858585;
     max-width: 288px;
+    transition: all 0.3s ease;
 }
 
 .reviews-text:hover,
-.reviews-text:focus,
-.reviews-text:active {
+.reviews-text:focus {
     font-weight: 600;
     color: #7a3145;
-    transition: transform 0.3s ease;
+    transform: scale(1.05);
 }
 
-
-/* Исходное состояние: текст ниже и прозрачный */
+/* Анимация появления секции */
 .title-reviews,
 .reviews-paragraf,
 .reviews-item {
@@ -755,25 +712,11 @@ p {
     transition: all 1s ease;
 }
 
-/* Когда секция появляется */
 .section-reviews.show .title-reviews,
 .section-reviews.show .reviews-paragraf,
 .section-reviews.show .reviews-item {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Для эффекта stagger (чуть задерживаем каждый отзыв) */
-.reviews-item:nth-child(1) {
-    transition-delay: 0.2s;
-}
-
-.reviews-item:nth-child(2) {
-    transition-delay: 0.4s;
-}
-
-.reviews-item:nth-child(3) {
-    transition-delay: 0.6s;
 }
 
 /* -----section_Order------ */
@@ -834,7 +777,7 @@ p {
     border: 1px solid #858585;
     border-radius: 30px;
     width: 428px;
-    
+
 }
 
 .Order-input-comment {
@@ -844,14 +787,13 @@ p {
     width: 428px;
 }
 
-
-
 .Order-input-name::placeholder,
 .Order-input-email::placeholder,
 .Order-input-comment::placeholder {
     color: #141414;
 
 }
+
 .Order-input-name:hover,
 .Order-input-email:hover,
 .Order-input-comment:hover {
@@ -863,10 +805,12 @@ p {
 .Order-input-email:focus,
 .Order-input-comment:focus {
     border-color: #78394a;
-    outline: none;/* убираем стандартную синюю рамку браузера */
+    outline: none;
+    /* убираем стандартную синюю рамку браузера */
     box-shadow: 0 0 8px rgba(122, 49, 69, 0.4);
 
 }
+
 .Order-input-name,
 .Order-input-email,
 .Order-input-comment {
@@ -887,7 +831,7 @@ p {
     height: 52px;
     border-radius: 30px;
     color: #fbfbfb;
-    
+
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -895,7 +839,7 @@ p {
     color: #7A3145;
     background-color: #D4BFC4;
     box-shadow: 0 0 8px rgba(198, 65, 100, 0.4);
-    
+
 }
 
 .Order_btn:active {
@@ -918,25 +862,26 @@ p {
 }
 
 .Order_list2 img {
-border-radius: 16px;
+    border-radius: 16px;
 }
 
 .Order_list2 p {
     margin-top: 52px;
     margin-bottom: 16px;
     color: #D4BFC4;
-        
+
 }
 
 .Order_list2 a {
     text-decoration: none;
     text-transform: uppercase;
     margin-right: 8px;
-    
+
 }
+
 .Order_list2 a:not(:last-child)::after {
     content: "/";
-        margin-left: 16px;
+    margin-left: 16px;
 }
 
 
@@ -1053,20 +998,20 @@ border-radius: 16px;
 
 .mobile_menu {
     position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: flex-end;
-        align-items: stretch;
-        background-color: rgba(20, 20, 20, 0.4);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
-        z-index: 1000;
-        overflow: hidden;
-        
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    background-color: rgba(20, 20, 20, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1000;
+    overflow: hidden;
+
 }
 
 .mobile_menu.active {
@@ -1075,7 +1020,7 @@ border-radius: 16px;
 }
 
 .mobile_menu_container {
-background-color: #576F35;
+    background-color: #576F35;
     width: 351px;
     height: 100%;
     display: flex;
@@ -1166,4 +1111,3 @@ background-color: #576F35;
     background-color: #FBFBFB;
     box-shadow: 0 0 8px rgba(198, 65, 100, 0.4);
 }
-
