@@ -218,25 +218,23 @@ p {
     box-shadow: 0 0 8px rgba(198, 65, 100, 0.4);
 }
 
-/*  */
 
+/* mobile_header */
 
 .mobile_header {
-        display: none;
-        justify-content: space-between;
-        align-items: center;
-        margin: 20px auto;
-    
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
     padding: 11px 11px;
 
-    
-        border-radius: 50px;
-        background: rgba(200, 200, 200, 0.2);
-        backdrop-filter: blur(12px);
-        box-shadow:
-            0 4px 15px rgba(0, 0, 0, 0.1),
-            0 8px 30px rgba(0, 0, 0, 0.15);
-        transition: all 0.5s ease;
+    border-radius: 50px;
+    background: rgba(200, 200, 200, 0.2);
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        0 8px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s ease;
 }
 
 .mobile_header:hover {
@@ -246,21 +244,9 @@ p {
         0 12px 40px rgba(0, 0, 0, 0.18);
 }
 
-.mobile_logo {
-
-}
-
 .logo1_mob {
     display:none;
 }
-
-.menu {
-
-}
-
-
-
-.nav_icon_menu {}
 
 .nav_icon_menu_mob {
     display: none;
@@ -283,54 +269,6 @@ p {
     text-transform: uppercase;
     margin-bottom: 20px;
 }
-
-@media only screen and (max-width: 375px) {
-    /* .hero {
-        font-size: 43px;
-    }
-
-    .text-hero {
-        font-size: 11px;
-    } */
-}
-
-@media only screen and (min-width: 768px) {
-    .hero_section {
-        background-image: url(../img/pic_tablet/img1.jpg);
-        background-size: 768px, 536px;
-        background-position: bottom;
-        padding-top: 120px;
-        padding-bottom: 588px;
-    }
-
-    .hero {
-        max-width: 704px;
-    }
-
-    .text-hero {
-        max-width: 603px;
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-    .hero_section {
-        background-image: url(../img/pic_desktop/img1.jpg);
-        padding: 232px 0 52px;
-        background-position: left calc(50% + 320px) bottom 0;
-        background-size: 640px, 796px;
-        margin: auto;
-    }
-
-    .hero {
-        max-width: 502px;
-        margin-bottom: 128px;
-    }
-
-    .text-hero {
-        max-width: 472px;
-    }
-}
-
 
 .hero,
 .text-hero {
@@ -665,12 +603,6 @@ p {
     overflow: hidden;
 }
 
-@media screen and (min-width: 768px) {
-    .section-reviews {
-        padding: 100px 0;
-    }
-}
-
 .title-reviews {
     font-size: 46px;
     font-weight: 600;
@@ -687,44 +619,12 @@ p {
     color: #576f35;
 }
 
-@media screen and (min-width: 375px) {
-    .title-reviews {
-        font-size: 48px;
-    }
-}
 
 .reviews-paragraf {
     text-align: left;
     color: #141414;
     max-width: 335px;
     margin-bottom: 40px;
-}
-
-@media screen and (min-width: 768px) {
-    .title-reviews {
-        font-size: 64px;
-        font-weight: 600;
-        line-height: 64px;
-        letter-spacing: -0.015em;
-        text-align: left;
-        max-width: 553px;
-    }
-
-    .reviews-paragraf {
-        font-size: 16px;
-        max-width: 553px;
-        margin-bottom: 52px;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .title-reviews {
-        max-width: 751px;
-    }
-
-    .reviews-paragraf {
-        margin-bottom: 52px;
-    }
 }
 
 /* #region slider*/
@@ -766,12 +666,6 @@ p {
     transition: transform 0.3s ease;
 }
 
-@media screen and (min-width: 375px) {
-    .reviews-item {
-        width: 335px;
-    }
-}
-
 @keyframes slide-left {
 
     0%,
@@ -802,19 +696,6 @@ p {
 
 /* #endregion*/
 
-@media screen and (min-width: 768px) {
-    .reviews-list {
-        max-width: 1068px;
-        height: 248px;
-        overflow: hidden;
-        gap: 24px;
-    }
-
-    .reviews-item {
-        max-width: 340px;
-        padding: 20px;
-    }
-
     @keyframes slide-left {
 
         0%,
@@ -832,19 +713,6 @@ p {
             transform: translateX(0%);
         }
     }
-}
-
-@media screen and (min-width: 1280px) {
-    .reviews-list {
-        max-width: 1080px;
-    }
-
-    .reviews-item {
-        padding: 20px;
-        width: 344px;
-        animation: none !important;
-    }
-}
 
 .reviews-img {
     max-width: 56px;
@@ -875,12 +743,6 @@ p {
     font-weight: 600;
     color: #7a3145;
     transition: transform 0.3s ease;
-}
-
-@media screen and (min-width: 768px) {
-    .reviews-text {
-        font-size: 16px;
-    }
 }
 
 
@@ -1129,29 +991,6 @@ border-radius: 16px;
     transition-delay: 0.4s;
 }
 
-/* --- Мобильная версия: все элементы выезжают вертикально --- */
-@media (max-width: 767px) {
-
-    .Order_list1,
-    .Order_list2 {
-        transform: translateY(2rem);
-        /* смещение снизу */
-    }
-
-    .section_Order.show .Order_list1,
-    .section_Order.show .Order_list2 {
-        transform: translateY(0);
-    }
-
-    /* Можно уменьшить задержки, чтобы всё появлялось быстрее */
-    .Order_list1,
-    .Order_list2 {
-        transition: all 1.5s ease;
-        transition-delay: 0.5s;
-    }
-}
-
-
 /* ----footer---- */
 
 .footer {
@@ -1186,10 +1025,6 @@ border-radius: 16px;
 
 }
 
-.contacts {
-
-}
-
 .address {
     margin-top: 20px;
 }
@@ -1201,18 +1036,11 @@ border-radius: 16px;
     margin-top: 112px;
 
     color: #D4BFC4;
-
 }
-
-.privacypolicy_text {
-
-}
-
 
 .privacypolicy_text a {
     text-decoration: none;
     margin-right: 8px;
-
 }
 
 .privacypolicy_text a:not(:last-child)::after {
@@ -1221,7 +1049,7 @@ border-radius: 16px;
 }
 
 
-
+/* MOBILE MENU */
 
 .mobile_menu {
     position: fixed;
@@ -1265,15 +1093,9 @@ background-color: #576F35;
     transform: translateX(0);
 }
 
-.btn_menu_close {
-
-}
-
 .mobile_menu_close_icon {
     display: flex;
     margin-left: 253px;
-
-
 }
 
 .mobile_menu_close_icon_mob {
@@ -1287,7 +1109,6 @@ background-color: #576F35;
     justify-content: space-between;
     padding-top: 288px;
     gap: 20px;
-
 }
 
 .mob_list_link {
@@ -1305,14 +1126,12 @@ background-color: #576F35;
     padding: 15px;
     color: #FBFBFB;
 
-
     background: rgba(200, 200, 200, 0.2);
     backdrop-filter: blur(12px);
     box-shadow:
         0 4px 15px rgba(0, 0, 0, 0.1),
         0 8px 30px rgba(0, 0, 0, 0.15);
     transition: all 0.5s ease;
-    
 }
 
 .mob_links:hover {
@@ -1334,15 +1153,12 @@ background-color: #576F35;
     text-transform: uppercase;
 
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
-
 }
-
 
 .mob_menu_btn_shop:hover {
     color: #7A3145;
     background-color: #D4BFC4;
     box-shadow: 0 0 8px rgba(198, 65, 100, 0.4);
-
 }
 
 .mob_menu_btn_shop:active {

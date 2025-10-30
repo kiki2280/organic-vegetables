@@ -46,10 +46,11 @@
     }
 
 
+    /* Section_HowItWorks */
+
     .section_HowItWorks {
         background: linear-gradient(to bottom, #7A3145 556px, #576F35 0);
     }
-
 
     .HowItWorks_container {
         flex-direction: column;
@@ -79,11 +80,13 @@
 
     }
 
+    /* Section_Taste */
+
     .Taste_container {
         padding: 80px 0;
     }
 
-
+    /* Section_Vegetables */
 
     .Vegetables_container {
         padding: 80px 0px;
@@ -97,7 +100,19 @@
         margin-bottom: 40px;
     }
 
+    /* Section_Previews */
 
+    .title-reviews {
+        font-size: 48px;
+    }
+
+    .reviews-item {
+        width: 335px;
+    }
+
+
+
+    /* Section_Order */
 
     .Order_container {
         padding: 80px 0;
@@ -136,7 +151,26 @@
         padding: 40px 20px;
     }
 
+    /* amimation */
+    .Order_list1,
+    .Order_list2 {
+        transform: translateY(2rem);
+        /* смещение снизу */
+    }
 
+    .section_Order.show .Order_list1,
+    .section_Order.show .Order_list2 {
+        transform: translateY(0);
+    }
+
+    /* Можно уменьшить задержки, чтобы всё появлялось быстрее */
+    .Order_list1,
+    .Order_list2 {
+        transition: all 1.5s ease;
+        transition-delay: 0.5s;
+    }
+
+    /* Footer */
 
     .Links_Contacts {
         flex-direction: column;
@@ -150,6 +184,8 @@
 
                 
 }
+
+
 
 /* для планшета */
 @media only screen and (min-width: 768px) and (max-width: 1279px) {
@@ -166,6 +202,26 @@
     }
 
 
+    /* Hero_section */
+
+    .hero_section {
+        background-image: url(../img/pic_tablet/img1.jpg);
+        background-size: 768px, 536px;
+        background-position: bottom;
+        padding-top: 120px;
+        padding-bottom: 588px;
+    }
+
+    .hero {
+        max-width: 704px;
+    }
+
+    .text-hero {
+        max-width: 603px;
+    }
+
+    /* Section_HowItWorks */
+
     .section_HowItWorks {
         background: linear-gradient(to bottom, #7A3145 840px, #576F35 0);
     }
@@ -176,7 +232,6 @@
         gap: 0px;
         justify-content: center;
         align-items: center;
-
     }
 
     .HowItWorks_Column2 p {
@@ -188,27 +243,101 @@
     }
 
 
+    /* Section_Previews */
+
+    .section-reviews {
+        padding: 100px 0;
+    }
+
+    .title-reviews {
+        text-align: left;
+        max-width: 553px;
+    }
+
+    .reviews-paragraf {
+        max-width: 553px;
+        margin-bottom: 52px;
+    }
+
+    .reviews-list {
+        max-width: 1068px;
+        height: 248px;
+        overflow: hidden;
+        gap: 24px;
+    }
+
+    .reviews-item {
+        max-width: 340px;
+        padding: 20px;
+    }
 
 
-        .Order_list1 {
-            max-width: 640px;
-            padding: 72px 100px;
-        }
+    /* Section_Order */
 
-        .Order_list1 h3 {
-            max-width: 440px;
-        }
+    .Order_list1 {
+        max-width: 640px;
+        padding: 72px 100px;
+    }
 
-        .Order_list2 {
-            max-width: 640px;
-        }
+    .Order_list1 h3 {
+        max-width: 440px;
+    }
+
+    .Order_list2 {
+        max-width: 640px;
+    }
 
 
+    /* Footer */
 
-
-        .Links_Contacts {
-            flex-direction: column;
-            gap: 64px;
-        }
+    .Links_Contacts {
+        flex-direction: column;
+        gap: 64px;
+    }
 }
 
+/* для пк */
+@media only screen and (min-width: 1280px) {
+
+
+    /* Hero_section */
+
+    .hero_section {
+        background-image: url(../img/pic_desktop/img1.jpg);
+        padding: 232px 0 52px;
+        background-position: left calc(50% + 320px) bottom 0;
+        background-size: 640px, 796px;
+        margin: auto;
+    }
+
+    .hero {
+        max-width: 502px;
+        margin-bottom: 128px;
+    }
+
+    .text-hero {
+        max-width: 472px;
+    }
+
+    /* Section_Previews */
+
+    .title-reviews {
+        max-width: 751px;
+    }
+
+    .reviews-paragraf {
+        margin-bottom: 52px;
+    }
+
+    .reviews-list {
+        max-width: 1080px;
+    }
+
+    .reviews-item {
+        padding: 20px;
+        width: 344px;
+        animation: none !important;
+    }
+
+
+}
