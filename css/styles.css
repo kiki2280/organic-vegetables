@@ -1048,55 +1048,6 @@ border-radius: 16px;
         margin-left: 16px;
 }
 
-/* Исходное состояние текста */
-.Order_tilte,
-.Order_suptilte {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease;
-}
-
-/* Исходное состояние колонок */
-.Order_list1 {
-    opacity: 0;
-    transform: translateX(-100px);
-    /* слева */
-    transition: all 1.5s ease;
-}
-
-.Order_list2 {
-    opacity: 0;
-    transform: translateX(100px);
-    /* справа */
-    transition: all 1.5s ease;
-}
-
-/* Когда секция активна */
-.section_Order.show .Order_tilte,
-.section_Order.show .Order_suptilte {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.section_Order.show .Order_list1,
-.section_Order.show .Order_list2 {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Добавим небольшую задержку для текста и колонок */
-
-.Order_suptilte {
-    transition-delay: 0.2s;
-}
-
-.Order_list1 {
-    transition-delay: 0.3s;
-}
-
-.Order_list2 {
-    transition-delay: 0.3s;
-} 
 
 /* ----footer---- */
 

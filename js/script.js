@@ -102,20 +102,3 @@ const observer_Vagetables = new IntersectionObserver(entries => {
 section_Vagetables.forEach(section => observer_Vagetables.observe(section));
 
   // анимация на сайте  section_Order
-
-const section_Order = document.querySelector('.section_Order');
-
-const observer_Order = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show'); // если нужно скрывать при уходе
-    }
-  });
-}, {
-  threshold: 0.2
-});
-
-if (section_Order) observer_Order.observe(section_Order);
-
