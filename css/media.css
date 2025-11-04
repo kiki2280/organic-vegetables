@@ -203,6 +203,10 @@
         font-size: 48px;
     }
 
+    .reviews-list {
+        overflow-x: auto;
+    }
+
     .reviews-item {
         width: 335px;
     }
@@ -250,6 +254,14 @@
 
     .reviews-list {
         max-width: 1080px;
+
+        overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .reviews-list::-webkit-scrollbar {
+        display: none;
     }
 
     .reviews-item {
